@@ -35,10 +35,11 @@ public class Developer {
     
     public static Team getTeam() {
         // TODO: Change this to your team name
-        Team team = new Team("s25-xx");
+        Team team = new Team("f25-00");
         team.addMember("Daniel");
         team.addMember("Kate");
         team.addMember("Divyani P.");
+        team.addMember("Samuel");
         team.addMember("Sanjay C.");
         team.addMember("Derek");
         team.addMember("Phill");
