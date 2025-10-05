@@ -36,13 +36,24 @@ public class TeamTest {
     public void equals_different_object_same_values() {
 	Team t1 = new Team();
 	t1.setName("foo");
-	t1.addMember("bar");
+	t1.addMember("barty");
+	t1.addMember("barty2");
 	Team t2 = new Team();
 	t2.setName("foo");
-	t2.addMember("bar");
+	t2.addMember("barty");
+	t2.addMember("barty2");
 	assert(t1.equals(t2));
     }
 
+    @Test
+    public void equals_different_object_same_values_empty_members() {
+	Team t1 = new Team();
+	t1.setName("foo");
+	Team t2 = new Team();
+	t2.setName("foo");
+	assert(t1.equals(t2));
+    }
+    
     @Test
     public void equals_different_class() {
 	Team t1 = new Team();
@@ -62,6 +73,18 @@ public class TeamTest {
 	t2.addMember("foo");
 	assert(t1.equals(t2) == false);
     }
+
+    @Test
+    public void equals_different_members_same_name() {
+	Team t1 = new Team();
+	t1.setName("foo");
+	t1.addMember("bar");
+	Team t2 = new Team();
+	t2.setName("foo");
+	t2.addMember("foo2");
+	assert(t1.equals(t2) == false);
+    }
+
     
     @Test
     public void hashCode_is_deterministic() {
